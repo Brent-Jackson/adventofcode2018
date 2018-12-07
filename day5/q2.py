@@ -1,4 +1,6 @@
+import time
 
+start = time.time()
 lengths = {}
 
 for i in range(ord('a'),ord('z')+1):
@@ -19,6 +21,8 @@ for i in range(ord('a'),ord('z')+1):
     lengths[omit] = len(stack)
 
 shortest = min(lengths, key=lengths.get)
-print("Shortest polymer: {} ({} chars)".format(shortest,lengths[shortest]))
+end = time.time()
 
-            
+print("Shortest polymer: {} ({} chars)".format(shortest,lengths[shortest]))
+print("Elapsed time: ",end-start)
+     
